@@ -4,12 +4,13 @@ pipeline {
     stages {
         stage('mvn sonar:sonar -Dsonar') {
             steps {
-                echo 'mvn sonar..'
+                echo 'mvn..'
             }
         }
-        stage('Hello world') {
+        stage('build') {
             steps {
-                echo 'hello world..'
+                echo 'build..'
+            }
         }
     }
 }
