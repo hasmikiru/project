@@ -7,9 +7,14 @@ pipeline {
                 echo 'mvn..'
             }
         }
-        stage('build') {
-            steps {
-                echo 'build..'
+          stage("Build") {
+              // Run build
+              emailext subject: "Approve Build" body: "Approve build with link"
+              input message: "Approve build?" submitter: "admin"
+        }
+
+          stage("Deploy") {
+             // deploy artifact (only gets run after approval)
             }
         }
     }
